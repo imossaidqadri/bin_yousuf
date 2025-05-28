@@ -1,6 +1,7 @@
 // src/data/projects.d.ts
-import { Project } from '../scripts/types/index.js';
+import { Project } from '@/types/index';
 
 declare module './projects.js' {
   export const projects: Project[];
+  export default projects;
 }

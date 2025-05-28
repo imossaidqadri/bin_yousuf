@@ -1,16 +1,16 @@
 // Import your images - these paths need to match your actual file structure
-import panoramaImg from '../assets/projects/emaar/panorama/main-image.webp';
-import theViewsImg from '../assets/projects/emaar/the-views/main-image.webp';
-import parkEdgeImg from '../assets/projects/emaar/park-edge/main-image.webp';
-import coralTowersImg from '../assets/projects/emaar/coral-towers/main-image.webp';
-import pearlReefImg from '../assets/projects/emaar/pearl-reef-towers/main-image.webp';
-import aaWaterfrontImg from '../assets/projects/hmr/aa-waterfront/main-image.webp';
-import goldCrestImg from '../assets/projects/hmr/gold-crest-residence/main-image.webp';
-import hsResidenceImg from '../assets/projects/hmr/hs-residence/main-image.webp';
-import h1TowerImg from '../assets/projects/hmr/h1-tower/main-image.webp';
-import saimaMarinaImg from '../assets/projects/hmr/saima-marina/main-image.webp';
-import saimaWaterfrontImg from '../assets/projects/hmr/saima-waterfront/main-image.webp';
-import beachTerraceImg from '../assets/projects/hmr/beach-terraces-by-metro/main-image.webp';
+import panoramaImg from '@/assets/projects/emaar/panorama/main-image.webp';
+import theViewsImg from '@/assets/projects/emaar/the-views/main-image.webp';
+import parkEdgeImg from '@/assets/projects/emaar/park-edge/main-image.webp';
+import coralTowersImg from '@/assets/projects/emaar/coral-towers/main-image.webp';
+import pearlReefImg from '@/assets/projects/emaar/pearl-reef-towers/main-image.webp';
+import aaWaterfrontImg from '@/assets/projects/hmr/aa-waterfront/main-image.webp';
+import goldCrestImg from '@/assets/projects/hmr/gold-crest-residence/main-image.webp';
+import hsResidenceImg from '@/assets/projects/hmr/hs-residence/main-image.webp';
+import h1TowerImg from '@/assets/projects/hmr/h1-tower/main-image.webp';
+import saimaMarinaImg from '@/assets/projects/hmr/saima-marina/main-image.webp';
+import saimaWaterfrontImg from '@/assets/projects/hmr/saima-waterfront/main-image.webp';
+import beachTerraceImg from '@/assets/projects/hmr/beach-terraces-by-metro/main-image.webp';
 
 export const projects = [
   {
@@ -98,14 +98,4 @@ export const projects = [
     image: beachTerraceImg,
   },
 ];
-
-export const getProjectsByLocation = (location) => {
-  return projects.filter(project => project.location === location);
-};
-
-export const getProjectCounts = () => {
-  return {
-    emaar: projects.filter(p => p.location === 'Emaar').length,
-    hmr: projects.filter(p => p.location === 'HMR').length,
-  };
-};
+export default projects;

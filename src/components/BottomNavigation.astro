@@ -1,49 +1,25 @@
 ---
-import { getProjectCounts } from '../data/projects.js';
-
-const projectCounts = getProjectCounts();
+import { getProjectCounts } from "@/utils/projects-utils";
+import projects from "@/data/projects";
+const projectCounts = getProjectCounts(projects);
+const nameMap = {
+  "emaar": 'Emaar® Waterfront Properties',
+  "hmr": 'HMR® Waterfront Properties',
+};
 ---
 
-<div class="bottom-nav">
-  <a href="#emaar" class="bottom-link">
-    Emaar <sup>{projectCounts.emaar}</sup>
-  </a>
-  <a href="#hmr" class="bottom-link">
-    HMR <sup>{projectCounts.hmr}</sup>
-  </a>
+<div class="fixed bottom-0 mb-[1rem]">
+  <ul
+    class="flex flex-col md:lg:flex-row md:lg:gap-x-[2rem]">
+    {Object.entries(projectCounts).map(([key, value]) => (
+    <li
+      role="button"
+      class="group hover:text-gray-1 transition duration-500 text-gray-2 text-sm -tracking-[0.03em] default:tracking-normal flex items-center">
+      {nameMap[key]}
+      <sup
+        class="group-hover:text-gray-1 transition duration-500 text-gray-2 pl-[1rem]"
+        >{value}</sup>
+    </li>
+    ))}
+  </ul>
 </div>
-
-<style>
-  .bottom-nav {
-    position: fixed;
-    bottom: 0px;
-    display: flex;
-    gap: 40px;
-    z-index: 10;
-  }
-
-  .bottom-link {
-    text-decoration: none;
-    color: #999;
-    font-size: 14px;
-    font-weight: 400;
-    transition: color 0.3s ease;
-  }
-
-  .bottom-link:hover {
-    color: #333;
-  }
-
-  .bottom-link sup {
-    font-size: 10px;
-    margin-left: 2px;
-  }
-
-  @media (max-width: 768px) {
-    .bottom-nav {
-      bottom: 0px;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-  }
-</style>

@@ -1,7 +1,7 @@
 ---
-import { getProjectCounts } from '../data/projects.js';
-
-const projectCounts = getProjectCounts();
+import { getProjectCounts } from '@/utils/projects-utils';
+import projects from "@/data/projects";
+const projectCounts = getProjectCounts(projects);
 ---
 
 <nav class="
@@ -12,21 +12,21 @@ const projectCounts = getProjectCounts();
   lg:px-8
 ">
   <div class="flex">
-    <a href="#projects" class="text-sm font-normal text-gray-700 hover:text-black transition-colors duration-300">
+    <a href="#projects" class="text-sm font-normal text-neutral-700 hover:text-black transition-colors duration-300">
       Projects
     </a>
   </div>
   <div class="flex space-x-6 md:space-x-8">
-    <a href="#emaar" class="text-sm font-normal text-gray-700 hover:text-black transition-colors duration-300">
+    <a href="#emaar" class="text-sm font-normal text-neutral-700 hover:text-black transition-colors duration-300">
       Emaar
     </a>
-    <a href="#hmr" class="text-sm font-normal text-gray-700 hover:text-black transition-colors duration-300">
+    <a href="#hmr" class="text-sm font-normal text-neutral-700 hover:text-black transition-colors duration-300">
       HMR Waterfront
     </a>
-    <a href="#about" class="text-sm font-normal text-gray-700 hover:text-black transition-colors duration-300">
+    <a href="#about" class="text-sm font-normal text-neutral-700 hover:text-black transition-colors duration-300">
       About
     </a>
-    <a href="#contact" class="text-sm font-normal text-gray-700 hover:text-black transition-colors duration-300">
+    <a href="#contact" class="text-sm font-normal text-neutral-700 hover:text-black transition-colors duration-300">
       Contact
     </a>
   </div>
